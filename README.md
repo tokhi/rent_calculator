@@ -35,11 +35,11 @@ rails s
 ```
 
 
-To import a new CSV dump:
+To import a new CSV dump via rake task:
 
 
 ```bash
-Services::CsvImport.new('test/fixtures/files/rents.csv','Apartment').call
+rake import[test/fixtures/files/rents.csv]
 ```
 
 change the `test/fixtures/files/rents.csv` to the file path you want to import.
