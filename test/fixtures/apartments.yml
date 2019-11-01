@@ -1,6 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  apartment_id: ewwerdf234Ysdf
   zip_code: 13355
   apartment_type: basement
   apartment_size: 51
@@ -8,8 +9,9 @@ one:
   rent: 420
 
 two:
+  apartment_id: Fgwerdf234Ysds
   zip_code: 13355
   apartment_type: loft
-  apartment_size: 51
+  apartment_size: 61
   deleted: false
   rent: 560
