@@ -1,24 +1,65 @@
-# README
+# Rent Calculator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rent estimation API based on the exsiting data
 
 Things you may want to cover:
 
 * Ruby version
+	ruby-2.6.3
+	you can install it using rvm.io or any other favorite option
 
-* System dependencies
+## Initial Setup
+make sure you have got the right ruby version it it mentioned in above step
 
-* Configuration
+```
+# if you are using rvm
+rvm install ruby-2.6.3
+```
 
-* Database creation
+Installing gems:
 
-* Database initialization
+```bash
+gem install bundler
+bundler install
+```
 
-* How to run the test suite
+DB Setup:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rake db:migrate
+```
+To start the app:
 
-* Deployment instructions
+```bash
+rails s
+```
 
-* ...
+
+To import a new CSV dump:
+
+
+```bash
+csv = Services::CsvImport.new('test/fixtures/files/rents.csv','Apartment').call
+```
+
+change the `test/fixtures/files/rents.csv` to the file path you want to import.
+
+## API Endpoints
+To access apartments:
+
+http://localhost:3000/apartments?zipcode=10319
+
+You can filter apartments by `zip_code`, `apartment_id`, `apartment_size`, `rent`, `apartment_type` and `deleted`
+
+e.g; http://localhost:3000/apartments?apartments?zipcode=10319&apartment_size55&rent=950
+
+**To create a new Estimation:**
+
+e.g; http://localhost:3000/estimations?zip_code=10315&apartment_size=98
+
+## Test cases
+To run all the tests:
+rails test
+
+You can find the tests under the `test` directory
+e.g; test/controllers, test/lib/services
