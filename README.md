@@ -53,7 +53,7 @@ You can filter apartments by `zip_code`, `apartment_id`, `apartment_size`, `rent
 
 - e.g; http://localhost:3000/apartments?zip_code=10319&apartment_size145&rent=870
 
-**To create a new Estimation:**
+### Apartment Estimation:**
 
 - e.g; http://localhost:3000/estimations?zip_code=10315&apartment_size=98
 
