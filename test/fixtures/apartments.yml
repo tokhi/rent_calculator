@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip_code: 13355
+  apartment_type: basement
+  apartment_size: 51
+  deleted: false
+  rent: 420
+
+two:
+  zip_code: 13355
+  apartment_type: loft
+  apartment_size: 51
+  deleted: false
+  rent: 560
