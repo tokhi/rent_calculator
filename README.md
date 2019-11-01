@@ -5,7 +5,7 @@ Rent estimation API based on the exsiting data
 Things you may want to cover:
 
 * Ruby version
-	ruby-2.6.3
+	`ruby-2.6.3`
 	you can install it using rvm.io or any other favorite option
 
 ## Initial Setup
@@ -47,15 +47,15 @@ change the `test/fixtures/files/rents.csv` to the file path you want to import.
 ## API Endpoints
 To access apartments:
 
-http://localhost:3000/apartments?zip_code=10319
+- http://localhost:3000/apartments?zip_code=10319
 
 You can filter apartments by `zip_code`, `apartment_id`, `apartment_size`, `rent`, `apartment_type` and `deleted`
 
-e.g; http://localhost:3000/apartments?zip_code=10319&apartment_size145&rent=870
+- e.g; http://localhost:3000/apartments?zip_code=10319&apartment_size145&rent=870
 
 **To create a new Estimation:**
 
-e.g; http://localhost:3000/estimations?zip_code=10315&apartment_size=98
+- e.g; http://localhost:3000/estimations?zip_code=10315&apartment_size=98
 
 ## Test cases
 To run all the tests:
