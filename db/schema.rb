@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_11_01_142918) do
     t.string "zip_code"
     t.string "apartment_type"
     t.integer "apartment_size"
-    t.integer "rent"
+    t.decimal "rent"
     t.boolean "deleted"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

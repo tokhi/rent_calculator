@@ -5,7 +5,7 @@ class CreateApartments < ActiveRecord::Migration[6.0]
       t.string :zip_code
       t.string :apartment_type
       t.integer :apartment_size
-      t.integer :rent
+      t.decimal :rent
       t.boolean :deleted
       t.timestamps
     end
