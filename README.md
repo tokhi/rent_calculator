@@ -45,6 +45,8 @@ rake import[test/fixtures/files/rents.csv]
 change the `test/fixtures/files/rents.csv` to the file path you want to import.
 
 ## API Endpoints
+Using the `Apartment` API endpoint you can Create, Read, Update or Delete a specific apartment.
+
 To access apartments:
 
 - http://localhost:3000/apartments?zip_code=10319
