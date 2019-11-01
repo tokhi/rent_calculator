@@ -3,15 +3,17 @@
 require 'csv'
 module Services
   class CsvImport
-    def initialize(file, model)
+    def initialize(file, klass)
       @file = file
-      @model = model
+      @klass = klass.constantize
     end
 
     def call
       CSV.foreach(@file, headers: true) do |row|
-        @model.create!(row.to_hash)
+        @klass.create!(row.to_hash)
       end
+    rescue Exception => e
+      "Error: #{e}"
     end
   end
 end
