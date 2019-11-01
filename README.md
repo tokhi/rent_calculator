@@ -9,7 +9,7 @@ Things you may want to cover:
 	you can install it using rvm.io or any other favorite option
 
 ## Initial Setup
-make sure you have got the right ruby version it it mentioned in above step
+make sure you have got the right ruby version as it mentioned in the above step.
 
 ```
 # if you are using rvm
@@ -20,7 +20,7 @@ Installing gems:
 
 ```bash
 gem install bundler
-bundler install
+bundle install
 ```
 
 DB Setup:
@@ -39,7 +39,7 @@ To import a new CSV dump:
 
 
 ```bash
-csv = Services::CsvImport.new('test/fixtures/files/rents.csv','Apartment').call
+Services::CsvImport.new('test/fixtures/files/rents.csv','Apartment').call
 ```
 
 change the `test/fixtures/files/rents.csv` to the file path you want to import.
@@ -47,11 +47,11 @@ change the `test/fixtures/files/rents.csv` to the file path you want to import.
 ## API Endpoints
 To access apartments:
 
-http://localhost:3000/apartments?zipcode=10319
+http://localhost:3000/apartments?zip_code=10319
 
 You can filter apartments by `zip_code`, `apartment_id`, `apartment_size`, `rent`, `apartment_type` and `deleted`
 
-e.g; http://localhost:3000/apartments?apartments?zipcode=10319&apartment_size55&rent=950
+e.g; http://localhost:3000/apartments?zip_code=10319&apartment_size145&rent=870
 
 **To create a new Estimation:**
 
@@ -59,7 +59,9 @@ e.g; http://localhost:3000/estimations?zip_code=10315&apartment_size=98
 
 ## Test cases
 To run all the tests:
-rails test
+
+`rails test`
 
 You can find the tests under the `test` directory
-e.g; test/controllers, test/lib/services
+- test/controllers
+- test/lib/services
