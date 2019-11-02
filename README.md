@@ -70,6 +70,12 @@ You can filter apartments by `zip_code`, `apartment_id`, `apartment_size`, `rent
 
 - e.g; http://localhost:3000/apartments?zip_code=10319&apartment_size145&rent=870
 
+To POST a new apartment through the api, you can use `postman`, `curl` or you own favorite http client
+
+```bash
+curl -d "apartment[apartment_id]=7ee8e00e-8cf2-4bc1-8cfc-8d45ed97155743" -d "apartment[zip_code]=10179" -d "apartment[apartment_type]=loft" -d "apartment[zip_code]=10179" -d "apartment[apartment_size]=71" -d "apartment[rent]=640" -d "apartment[deleted]=false"  http://localhost:3000/apartments
+```
+
 ### Apartment Estimation
 You can pass the `zip_code` and `apartment_size` to get an estimation:
 
