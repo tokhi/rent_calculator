@@ -34,6 +34,9 @@ To start the app:
 rails s
 ```
 
+### Data Import
+
+#### Manual
 
 To import a new CSV dump via rake task manually:
 
@@ -42,7 +45,9 @@ To import a new CSV dump via rake task manually:
 # M indicates the manual execution
 rake import[test/fixtures/files/rents.csv,M]
 ```
-To import csv files on daily bases e.g; (At 01:00) automatically, then you need to add this to your cron jobs using `crontab -e`
+#### Cron Job
+
+To import csv files on daily bases e.g; (At 01:00) automatically, then you need to add this to your cron jobs using `crontab -e`:
 
 ```bash
 # A indicates the Auto execution
