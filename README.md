@@ -35,14 +35,24 @@ rails s
 ```
 
 
-To import a new CSV dump via rake task:
+To import a new CSV dump via rake task manually:
 
 
 ```bash
-rake import[test/fixtures/files/rents.csv]
+# M indicates the manual execution
+rake import[test/fixtures/files/rents.csv,M]
 ```
+To import csv files on daily bases e.g; (At 01:00) automatically, then you need to add this to your cron jobs using `crontab -e`
 
-change the `test/fixtures/files/rents.csv` to the file path you want to import.
+```bash
+# A indicates the Auto execution
+0 1 * * * cd /Path/to/rent_calculator && bin/rake import[test/fixtures/files/rents,A]
+```
+change the `/Path/to/rent_calculator` to project path and `test/fixtures/files/rents.csv` to the file path you want to import.
+
+**Important:**
+
+The job expects you to name the csv files with the date suffix e.g; `rents-2019-11-02.csv`. You can change the fie name to what ever you want in the cron job.
 
 ## API Endpoints
 Using the `Apartment` API endpoint you can Create, Read, Update or Delete a specific apartment.
