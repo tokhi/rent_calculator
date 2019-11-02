@@ -11,9 +11,11 @@ module Services
     def call
       CSV.foreach(@file, headers: true) do |row|
         @klass.create!(row.to_hash)
+      rescue StandardError
+        nil
       end
     rescue Exception => e
-      "Error: #{e}"
+      puts "Error: #{e}"
     end
   end
 end
