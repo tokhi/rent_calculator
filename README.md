@@ -83,3 +83,4 @@ To run all the tests:
 You can find the tests under the `test` directory
 - test/controllers
 - test/lib/services
+- test/lib/tasks
