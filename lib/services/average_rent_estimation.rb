@@ -12,13 +12,16 @@ module Services
     end
 
     def average
+      return Float::NAN unless @params.present?
+
       @rents.inject { |sum, rent| sum + rent }.to_f / @rents.size
     end
 
     def estimation_params
-      return { msg: I18n.t(:msg) } unless @params.present?
+      avg = average
+      return { msg: I18n.t(:msg) } if avg.nan?
 
-      { estimation: @params.merge(estimated_rent: average) }
+      { estimation: @params.merge(estimated_rent: avg) }
     end
   end
 end

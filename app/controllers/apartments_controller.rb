@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ApartmentsController < ApplicationController
-  before_action :set_apartment, only: [:show, :update, :destroy]
+  before_action :set_apartment, only: %i[show update destroy]
 
   def index
     @apartments = Apartment.filter(params.slice(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id))
@@ -33,13 +35,13 @@ class ApartmentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_apartment
-      @apartment = Apartment.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def apartment_params
-      params.require(:apartment).permit(:zip_code, :apartment_type, :apartment_size, :rent)
-    end
+  def set_apartment
+    @apartment = Apartment.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def apartment_params
+    params.require(:apartment).permit(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id)
+  end
 end

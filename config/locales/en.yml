@@ -30,4 +30,4 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  msg: "please define zip_code and size parameters"
+  msg: "please check your parameters, you nee to have proper zip_code and apartment_size."

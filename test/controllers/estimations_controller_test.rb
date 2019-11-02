@@ -13,7 +13,7 @@ class EstimationsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get estimations_url, as: :json
     json_response = JSON.parse(response.body)
-    assert_response :success
+    assert_response :not_found
     assert_equal true, json_response['msg'].present?
   end
 
