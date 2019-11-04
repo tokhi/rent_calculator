@@ -4,7 +4,7 @@ class ApartmentsController < ApplicationController
   before_action :set_apartment, only: %i[show update destroy]
 
   def index
-    @apartments = Apartment.filter(params.slice(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id))
+    @apartments = Apartment.filter(params.slice(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id, :deleted))
     render json:  @apartments
   end
 
@@ -42,6 +42,6 @@ class ApartmentsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def apartment_params
-    params.require(:apartment).permit(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id)
+    params.require(:apartment).permit(:zip_code, :apartment_size, :rent, :apartment_type, :apartment_id, :deleted)
   end
 end

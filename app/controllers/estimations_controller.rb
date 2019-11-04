@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class EstimationsController < ApplicationController
-  before_action :set_apartment, only: %i[show update destroy]
 
   def index
     rents = Apartment.filter(estimation_params).pluck(:rent)
